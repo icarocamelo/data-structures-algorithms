@@ -54,4 +54,18 @@ public class CustomSingleLinkedListTests {
 
         assertEquals(tail.data, 4);
     }
+
+    @Test
+    public void reverse(){
+        CustomSingleLinkedList linkedList = new CustomSingleLinkedList();
+        linkedList.addFront(5);
+        linkedList.addFront(1);
+        linkedList.addFront(3);
+        linkedList.addFront(2);
+        linkedList.addFront(0);
+
+        linkedList.reverse();
+
+        assertEquals(linkedList.getHead().data, 5);
+    }
 }

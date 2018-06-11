@@ -2,6 +2,14 @@ package com.icarocamelo.datastructures;
 
 public class CustomSingleLinkedList {
 
+    class Node {
+        int data;
+        Node next;
+        public Node(int data){
+            this.data = data;
+        }
+    }
+
     public void addFront(int data) {
         Node newNode = new Node(data);
 
@@ -40,11 +48,26 @@ public class CustomSingleLinkedList {
         current.next = newNode;
     }
 
-    class Node {
-        int data;
+    public void reverse() {
+        Node previous = null;
+        Node current = head;
         Node next;
-        public Node(int data){
-            this.data = data;
+
+        while(current.next != null){
+            // set next element
+            next = current.next;
+
+            // reversing link
+            current.next = previous;
+
+            // set previous to current element
+            previous = current;
+
+            // set next to be the current
+            current = next;
+
+            // update head
+            head = current;
         }
     }
 
