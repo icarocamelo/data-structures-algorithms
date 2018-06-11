@@ -3,6 +3,7 @@ package com.icarocamelo.datastructures;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
+import static org.junit.Assert.assertNull;
 
 public class CustomSingleLinkedListTests {
     @Test
@@ -67,5 +68,31 @@ public class CustomSingleLinkedListTests {
         linkedList.reverse();
 
         assertEquals(linkedList.getHead().data, 5);
+    }
+
+    @Test
+    public void getNthElement(){
+        CustomSingleLinkedList linkedList = new CustomSingleLinkedList();
+        linkedList.addFront(5); // #4
+        linkedList.addFront(1); // #3
+        linkedList.addFront(3); // #2
+        linkedList.addFront(2); // #1
+        linkedList.addFront(0); // #0
+
+
+        assertEquals(linkedList.getNth(3).data, 1);
+    }
+
+    @Test
+    public void getNullWhenNthIndexIsOutOfBoundaries(){
+        CustomSingleLinkedList linkedList = new CustomSingleLinkedList();
+        linkedList.addFront(5); // #4
+        linkedList.addFront(1); // #3
+        linkedList.addFront(3); // #2
+        linkedList.addFront(2); // #1
+        linkedList.addFront(0); // #0
+
+
+        assertNull(linkedList.getNth(5));
     }
 }

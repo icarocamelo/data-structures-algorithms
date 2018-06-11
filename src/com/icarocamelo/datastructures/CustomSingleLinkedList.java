@@ -2,6 +2,23 @@ package com.icarocamelo.datastructures;
 
 public class CustomSingleLinkedList {
 
+    public Node getNth(int index) {
+        int i = 0;
+        Node found = null;
+        Node current = head;
+
+        while(current.next != null){
+            if (i == index) {
+                found = current;
+                break;
+            }
+            current = current.next;
+            i++;
+        }
+
+        return found;
+    }
+
     class Node {
         int data;
         Node next;
