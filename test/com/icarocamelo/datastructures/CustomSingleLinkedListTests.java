@@ -11,7 +11,7 @@ public class CustomSingleLinkedListTests {
         CustomSingleLinkedList linkedList = new CustomSingleLinkedList();
         linkedList.addFront(1);
 
-        CustomSingleLinkedList.Node head = linkedList.getHead();
+        LinkedListNode head = linkedList.getHead();
 
         assertEquals(head.data, 1);
     }
@@ -22,7 +22,7 @@ public class CustomSingleLinkedListTests {
         linkedList.addFront(1);
         linkedList.addFront(2);
 
-        CustomSingleLinkedList.Node head = linkedList.getHead();
+        LinkedListNode head = linkedList.getHead();
 
         assertEquals(head.data, 2);
         assertEquals(head.next.data, 1);
@@ -35,7 +35,7 @@ public class CustomSingleLinkedListTests {
         linkedList.addFront(2);
         linkedList.addFront(3);
 
-        CustomSingleLinkedList.Node tail = linkedList.getTail();
+        LinkedListNode tail = linkedList.getTail();
 
         assertEquals(tail.data, 1);
     }
@@ -51,7 +51,7 @@ public class CustomSingleLinkedListTests {
 
         linkedList.addFront(5);
 
-        CustomSingleLinkedList.Node tail = linkedList.getTail();
+        LinkedListNode tail = linkedList.getTail();
 
         assertEquals(tail.data, 4);
     }

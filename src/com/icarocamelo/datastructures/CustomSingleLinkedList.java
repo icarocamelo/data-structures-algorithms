@@ -2,10 +2,10 @@ package com.icarocamelo.datastructures;
 
 public class CustomSingleLinkedList {
 
-    public Node getNth(int index) {
+    public LinkedListNode getNth(int index) {
         int i = 0;
-        Node found = null;
-        Node current = head;
+        LinkedListNode found = null;
+        LinkedListNode current = head;
 
         while(current.next != null){
             if (i == index) {
@@ -19,28 +19,20 @@ public class CustomSingleLinkedList {
         return found;
     }
 
-    class Node {
-        int data;
-        Node next;
-        public Node(int data){
-            this.data = data;
-        }
-    }
-
     public void addFront(int data) {
-        Node newNode = new Node(data);
+        LinkedListNode newLinkedListNode = new LinkedListNode(data);
 
         if (head == null){
-            head = newNode;
+            head = newLinkedListNode;
             return;
         }
 
-        newNode.next = head;
-        head = newNode;
+        newLinkedListNode.next = head;
+        head = newLinkedListNode;
     }
 
-    public Node getTail() {
-        Node current = head;
+    public LinkedListNode getTail() {
+        LinkedListNode current = head;
         System.out.println("Head element: " + current.data);
 
         while( current.next != null){
@@ -51,24 +43,24 @@ public class CustomSingleLinkedList {
     }
 
     public void addLast(int data) {
-        Node newNode = new Node(data);
+        LinkedListNode newLinkedListNode = new LinkedListNode(data);
 
         if (head == null){
-            head = newNode;
+            head = newLinkedListNode;
             return;
         }
 
-        Node current = head;
+        LinkedListNode current = head;
         while( current.next != null){
             current = current.next;
         }
-        current.next = newNode;
+        current.next = newLinkedListNode;
     }
 
     public void reverse() {
-        Node previous = null;
-        Node current = head;
-        Node next;
+        LinkedListNode previous = null;
+        LinkedListNode current = head;
+        LinkedListNode next;
 
         while(current.next != null){
             // set next element
@@ -88,9 +80,9 @@ public class CustomSingleLinkedList {
         }
     }
 
-    private Node head;
+    private LinkedListNode head;
 
-    public Node getHead() {
+    public LinkedListNode getHead() {
         return head;
     }
 
