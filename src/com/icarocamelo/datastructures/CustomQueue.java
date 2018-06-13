@@ -46,4 +46,16 @@ public class CustomQueue {
         }
         return null;
     }
+
+    public LinkedListNode poll() {
+        LinkedListNode oldHead = head;
+        if (head.next != null){
+            head = head.next;
+        } else {
+            head = null;
+            tail = null;
+        }
+        size--;
+        return oldHead;
+    }
 }
