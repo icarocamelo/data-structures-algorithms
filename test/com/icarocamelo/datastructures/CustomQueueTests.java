@@ -92,4 +92,67 @@ public class CustomQueueTests {
         assertEquals(3, element3.data);
         assertEquals(0, queue.size());
     }
+
+    @Test
+    public void removeNthElementFromQueue(){
+        CustomQueue queue = new CustomQueue();
+        LinkedListNode node1 = new LinkedListNode(1);
+        LinkedListNode node2 = new LinkedListNode(2);
+        LinkedListNode node3 = new LinkedListNode(3);
+        LinkedListNode node4 = new LinkedListNode(4);
+
+        queue.offer(node1);
+        queue.offer(node2);
+        queue.offer(node3);
+        queue.offer(node4);
+
+        queue.delete(2);
+
+        assertEquals(1, queue.get(0).data);
+        assertEquals(2, queue.get(1).data);
+        assertEquals(4, queue.get(2).data);
+        assertEquals(3, queue.size());
+    }
+
+    @Test
+    public void removeFirstElementFromQueue(){
+        CustomQueue queue = new CustomQueue();
+        LinkedListNode node1 = new LinkedListNode(1);
+        LinkedListNode node2 = new LinkedListNode(2);
+        LinkedListNode node3 = new LinkedListNode(3);
+        LinkedListNode node4 = new LinkedListNode(4);
+
+        queue.offer(node1);
+        queue.offer(node2);
+        queue.offer(node3);
+        queue.offer(node4);
+
+        queue.delete(0);
+
+        assertEquals(2, queue.get(0).data);
+        assertEquals(3, queue.get(1).data);
+        assertEquals(4, queue.get(2).data);
+        assertEquals(3, queue.size());
+    }
+
+    @Test
+    public void removeLastElementFromQueue(){
+        CustomQueue queue = new CustomQueue();
+        LinkedListNode node1 = new LinkedListNode(1);
+        LinkedListNode node2 = new LinkedListNode(2);
+        LinkedListNode node3 = new LinkedListNode(3);
+        LinkedListNode node4 = new LinkedListNode(4);
+
+        queue.offer(node1);
+        queue.offer(node2);
+        queue.offer(node3);
+        queue.offer(node4);
+
+        queue.delete(3);
+
+        assertEquals(1, queue.get(0).data);
+        assertEquals(2, queue.get(1).data);
+        assertEquals(3, queue.get(2).data);
+        assertEquals(3, queue.size());
+    }
 }

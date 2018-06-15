@@ -58,4 +58,26 @@ public class CustomQueue {
         size--;
         return oldHead;
     }
+
+    public void delete(int index) {
+        int i = -1;
+        LinkedListNode previous = null;
+        LinkedListNode current = head;
+        LinkedListNode next;
+        while (current != null){
+            next = current.next;
+            if (i+1 == index){
+                if (previous == null){
+                    head = current.next;
+                } else {
+                    previous.next = next;
+                }
+                size--;
+                return;
+            }
+            previous = current;
+            current = current.next;
+            i++;
+        }
+    }
 }
